@@ -96,6 +96,7 @@ export default class Tracks extends Component{
     }
 
     componentDidMount(){
+        window.scrollTo(0, 0);
         fetch(this.state.url+this.props.match.params.tracks+"/top?limit=50")
         .then(response=>response.json())
         .then(data=>this.setState({data:data.data}))

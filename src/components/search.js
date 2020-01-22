@@ -117,6 +117,7 @@ export default class Search extends Component{
     }
 
     componentDidMount(){
+        window.scrollTo(0, 0);
         fetch(this.state.url+this.state.params)
         .then(response=>response.json())
         .then(data=>this.setState({data: data.data.filter(item=>item.type==="track")}))
@@ -128,6 +129,7 @@ export default class Search extends Component{
                 audio.pause();
                 this.setState({status:"stopped"});
             }
+            window.scrollTo(0, 0);
             fetch(this.state.url+this.props.match.params.search)
             .then(response=>response.json())
             .then(data=>this.setState({data: data.data.filter(item=>item.type==="track")}));

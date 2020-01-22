@@ -136,6 +136,7 @@ export default class Landing extends Component{
     }
 
     componentDidMount(){
+        window.scrollTo(0, 0);
         fetch(this.state.url)
         .then(response=>response.json())
         .then(data=>this.setState({data:data.tracks.data}))
